@@ -13,6 +13,7 @@ import { FavouritesComponent } from './book/favourites/favourites.component';
 import { AboutComponent } from './about/about.component';
 import { Error404Component } from './error404/error404.component';
 import { FindBooksComponent } from './book/find/find.component';
+import { BookInterfaceModule } from './interfaces/book.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,7 @@ import { FindBooksComponent } from './book/find/find.component';
     FormsModule,
     AppRoutingModule,
     MaterialModule,
-    BookModule
+    BookInterfaceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
