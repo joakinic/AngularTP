@@ -14,15 +14,15 @@ export interface Book {
   id?:number;
   isbn:string;
   title:string;
-  price:number;
+  price:number|string;
   url_cover:string;
   id_author:number;
   id_genre:number;
   author?:string;
   genre?:string;
 
-  favourite:boolean;
-  note:string;
+  favourite?:boolean;
+  note?:string;
 }
 
 export interface FavouriteItem {

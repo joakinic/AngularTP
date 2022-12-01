@@ -4,6 +4,7 @@ import { BehaviorSubject, tap } from 'rxjs';
 import { Book, FavouriteItem } from '../interfaces/book';
 import { FavouritesService } from './favourites.service';
 import { Search } from '../interfaces/book';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,8 @@ export class BooksService {
 
   constructor(
     private _http: HttpClient,
-    private _favouritesService: FavouritesService
+    private _favouritesService: FavouritesService,
+    private _dataService: DataService
   ) {
     setTimeout(() => {
       this._favouritesService.favourites$.subscribe(
@@ -30,7 +32,24 @@ export class BooksService {
   }
 
   public find(search:Search): void {
-    console.log(search);
+    let books = this._dataService.data
+      .filter((b) => b.title.toLowerCase().match(search.title.toLowerCase()))
+      .filter((b) => b.author?.toLowerCase().match(search.author.toLowerCase()))
+      .filter((b) => b.genre?.toLowerCase().match(search.genre.toLowerCase()))
+      .slice(0, 10);
+
+      books.forEach((book) => {
+          let i = this._favouritesService.findById(book.id!);
+          book.favourite = i ? i.favourite : false;
+          book.note = i ? i.note : '';
+        })
+
+        this._books = books;
+        this.books.next([...this._books]);
+  }
+
+  public findHttp(search:Search): void {
+
     let params:HttpParams = new HttpParams()
       .set('title', `%${search.title}%`)
       .set('author', `%${search.author}%`)
