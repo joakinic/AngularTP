@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { Error404Component } from './error404/error404.component';
 import { FindBooksComponent } from './book/find/find.component';
+import { FavouritesComponent } from './book/favourites/favourites.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'books',
     component: FindBooksComponent,
+  },
+  {
+    path: 'favourites',
+    component: FavouritesComponent,
   },
   {
     path: 'about',
