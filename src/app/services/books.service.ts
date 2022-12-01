@@ -1,9 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
-import { Book, FavouriteItem } from '../interfaces/book.module';
+import { Book, FavouriteItem } from '../interfaces/book';
 import { FavouritesService } from './favourites.service';
-import { Search } from 'src/app/interfaces/book.module';
+import { Search } from 'src/app/interfaces/book';
 
 @Injectable({
   providedIn: 'root',

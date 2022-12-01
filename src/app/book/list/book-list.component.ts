@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { Book } from '../../interfaces/book.module';
+import { Book } from '../../interfaces/book';
 import { FavouritesService } from '../../services/favourites.service';
 
 @Component({
