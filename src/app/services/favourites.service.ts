@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { FavouriteItem } from '../interfaces/book/book.module';
+import { FavouriteItem } from '../interfaces/book.module';
 
 @Injectable({
   providedIn: 'root',
