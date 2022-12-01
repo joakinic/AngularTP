@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
 import { Book, FavouriteItem } from '../interfaces/book';
 import { FavouritesService } from './favourites.service';
-import { Search } from 'src/app/interfaces/book';
+import { Search } from '../interfaces/book';
 
 @Injectable({
   providedIn: 'root',
