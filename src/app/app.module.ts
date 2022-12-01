@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BookListComponent } from './book/list/book-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './common/material/material.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FavouritesComponent } from './book/favourites/favourites.component';
 import { AboutComponent } from './about/about.component';
@@ -31,7 +30,6 @@ import { FindBooksComponent } from './book/find/find.component';
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
