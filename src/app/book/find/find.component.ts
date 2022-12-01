@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { Book, Search } from 'src/app/interfaces/book/book.module';
-import { BooksService } from 'src/app/services/books.service';
-import { FavouritesService } from 'src/app/services/favourites.service';
+import { Book, Search } from '../../interfaces/book/book.module';
+import { BooksService } from '../../services/books.service';
 
 @Component({
   selector: 'app-find-books',
