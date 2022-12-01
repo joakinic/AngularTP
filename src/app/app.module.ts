@@ -32,6 +32,7 @@ import { FindBooksComponent } from './book/find/find.component';
     FormsModule,
     AppRoutingModule,
     MaterialModule,
+    BookModule
   ],
   providers: [],
   bootstrap: [AppComponent]
