@@ -1,5 +1,3 @@
-import { NgModule } from '@angular/core';
-
 export interface Author {
   id?:number;
   author:string;
@@ -37,12 +35,4 @@ export interface Search {
   title: string,
   author: string,
   genre: string
-}
-
-
-@NgModule({
-  declarations: [],
-})
-export class BookInterfaceModule {
-
 }
