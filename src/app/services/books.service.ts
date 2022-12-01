@@ -49,7 +49,6 @@ export class BooksService {
   }
 
   public findHttp(search:Search): void {
-
     let params:HttpParams = new HttpParams()
       .set('title', `%${search.title}%`)
       .set('author', `%${search.author}%`)
@@ -85,16 +84,26 @@ export class BooksService {
         }
       } else {
         if (favourite.favourite) {
-          this._http.get<Book>(this.URL + 'books/' + favourite.id)
-          .subscribe(
-            (book) => {
-              [book.favourite, book.note] = [favourite.favourite, book.note];
-              if (!this._favourites.find(book => book.id == favourite.id )) {
-                this._favourites.push(book);
-                this.favourites.next([...this._favourites]);
-              }
+          let book:Book = this._dataService.data.find((b)=>b.id === favourite.id)!;
+          if (book) {
+            [book.favourite, book.note] = [favourite.favourite, book.note];
+            if (!this._favourites.find(book => book.id == favourite.id )) {
+              this._favourites.push(book);
+              this.favourites.next([...this._favourites]);
             }
-          )
+          }
+
+          // this._http.get<Book>(this.URL + 'books/' + favourite.id)
+          // .subscribe(
+          //   (book) => {
+          //     [book.favourite, book.note] = [favourite.favourite, book.note];
+          //     if (!this._favourites.find(book => book.id == favourite.id )) {
+          //       this._favourites.push(book);
+          //       this.favourites.next([...this._favourites]);
+          //     }
+          //   }
+          // )
+
         }
       }
     });
