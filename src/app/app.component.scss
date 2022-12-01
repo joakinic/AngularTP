@@ -1,0 +1,17 @@
+
+header {
+  margin-top: 0;
+  position:sticky;
+  background: #FFFFFF;
+  width: 100%;
+  top:0;
+  padding: 1rem;
+  hr {
+    width: calc(100% - 2rem);
+    padding: 0;
+    margin: 0;
+  }
+}
+router-outlet {
+  margin: 1rem;
+}
