@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Book } from '../../interfaces/book';
 import { FavouritesService } from '../../services/favourites.service';
 
