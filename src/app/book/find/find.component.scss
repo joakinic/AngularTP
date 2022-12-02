@@ -1,6 +1,6 @@
 #search {
   $color: rgb(84, 36, 94);
-  $sep:.5rem;
+  $sep: 0.5rem;
 
   padding: $sep;
   display: flex;
@@ -11,7 +11,8 @@
   background-color: $color;
 
   .fields {
-    width: calc(100% - 100px - $sep);
+    // width: calc(100% - 100px - $sep); //no le gusta a Stackblitz
+    width: calc(100% - 100px - .5rem);
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
@@ -29,6 +30,6 @@
   }
 }
 
-  hr {
-    margin: .75rem 0;
-  }
+hr {
+  margin: 0.75rem 0;
+}
